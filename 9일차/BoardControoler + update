@@ -1,0 +1,22 @@
+@PostMapping("/boards/update")
+    public String update(BoardForm boardform){
+        log.info(boardform.toString());
+
+        //1. dto를 엔티티로 반환하기
+        Board boardEntiy = boardform.toEntity();
+        //로그 찍기
+        log.info(boardform.toString());
+
+        //2, 엔티티를 DB에 저장하기.
+        Board saved = boardRepository.findById(boardEntiy.getId()).orElse(null);
+
+        if(saved != null){
+            boardRepository.save(boardEntiy);
+        }
+
+        //로그 찍기
+        log.info(boardform.toString());
+
+        //상세페이지로 리다이렉트 하기
+        return "redirect:/boards/" + saved.getId();
+    }
