@@ -1,0 +1,21 @@
+package com.example.project.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MvcController {
+
+    @GetMapping("/hello")
+    public String helloWorld(){
+        return "hi";
+    }
+}
+
+@GetMapping("/bye")
+    public String byeWorld(Model model) {
+        // 모델을 사용하기 위한 모델 추가
+        model.addAttribute("username1", "Micheal");
+        return "bye";
+    }
+}
