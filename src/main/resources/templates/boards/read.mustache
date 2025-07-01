@@ -1,0 +1,30 @@
+{{>layout/header}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <td> id</td>
+        <td> title</td>
+        <td> content</td>
+    </tr>
+    </thead>
+
+    {{#board}}
+    <tbody>
+        <tr>
+            <td> {{id}} </td>
+            <td> {{title}} </td>
+            <td> {{content}} </td>
+        </tr>
+    {{/board}}
+    </tbody>
+</table>
+
+<a href="/boards/{{board.id}}/edit" class="btn btn-primary"> edit</a><br>
+<a href="/boards/{{board.id}}/delete" class ="btn btn-primary"> </a><br>
+
+<a href ="/boards"> Go to Board List </a><br>
+<a href ="/boards" class ="btn btn-primary"> board reads </a>
+
+
+{{>layout/footer}}
