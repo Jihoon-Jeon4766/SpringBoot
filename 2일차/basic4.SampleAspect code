@@ -19,3 +19,29 @@ public class SampleAspect {
         System.out.println(String.format("메서드: %s", joinPoint.getSignature().getName()));
     }
 }
+
+
+
+
+package com.example.project.basic.basic4;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+import java.text.SimpleDateFormat;
+
+@Aspect
+@Component
+public class SampleAspect {
+
+    @After("execution(* com.example.project.basic.basic3.*Greet.*(..))")
+    public void afterAdvice(JoinPoint joinPoint){
+        System.out.println("======== After Advice ========");
+        System.out.println(new SimpleDateFormat("yyyy/MM/dd").format(new java.util.Date()));
+        System.out.println(String.format("메서드 : %s", joinPoint.getSignature().getName()));
+    }
+}
+
