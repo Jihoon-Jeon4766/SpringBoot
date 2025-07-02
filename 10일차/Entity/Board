@@ -1,0 +1,27 @@
+package com.example.project.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Getter
+@NoArgsConstructor
+@ToString
+@AllArgsConstructor
+@Entity
+public class Board {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) -> DB가 자동으로 아이디를 생성..
+    private Long id;
+
+    @Column
+    private String title;
+
+    @Column
+    private String content;
+
+
+}
