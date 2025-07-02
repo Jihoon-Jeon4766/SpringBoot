@@ -1,0 +1,23 @@
+package com.example.project;
+
+import com.example.project.basic.basic3.Greet;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjectApplication {
+
+	public static void main(String[] args) {
+
+		SpringApplication.run(ProjectApplication.class, args)
+				.getBean(ProjectApplication.class).execute1();
+	}
+
+	@Autowired
+	Greet greet;
+
+	private void execute1() {
+		greet.greeting(); //메서드 호출.
+	}
+}

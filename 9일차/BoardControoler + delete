@@ -1,0 +1,14 @@
+@GetMapping("/boards/{id}/delete")
+    public String delete(@PathVariable Long id, RedirectAttributes msg) {
+        log.info("삭제 요청이 들어왔습니다.");
+
+        Board deleteData = boardRepository.findById(id).orElse(null);
+        log.info(toString());
+
+        if (deleteData != null) {
+            boardRepository.delete(deleteData);
+            msg.addFlashAttribute("message","삭제되었습니다.");
+        }
+
+        return "redirect:/boards";
+    }

@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+{{>layout/header}}
+
+    <form action = ""> // 1. 입력 폼
+        <input type = "text"> // 2. 게시판 제목 입력
+        <textarea> // 3. 게시판의 내용 입력
+        </textarea>
+        <button type = "submit"> Submit </button> // 4. 버튼 생성
+    </form>
+
+{{>layout/footer}}
+</body>
+</html>

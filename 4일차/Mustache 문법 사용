@@ -1,0 +1,25 @@
+package com.example.project.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+// 1. Controller 어노테이션은 Controller임을 선언한다.
+@Controller
+public class MvcController {
+    // 2. GetMapping 안에 url정의
+    @GetMapping("/hello")
+    // 3. 반환형 String인 helloWorld메서드 정의
+    public String helloWorld(Model model) {
+        // 4. 메서드에서 반환될 mustache 파일명을 리턴에 정의
+        model.addAttribute("username", "Leo");
+        return "hi";
+    }
+    @GetMapping("/bye")
+    public String byeWorld(Model model) {
+        // 모델을 사용하기 위한 모델 추가
+        model.addAttribute("username1", "Micheal");
+        return "bye";
+    }
+
+}

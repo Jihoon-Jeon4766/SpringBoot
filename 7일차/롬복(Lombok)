@@ -1,0 +1,6 @@
+@AllArgsConstructor : 클래스 내의 모든 필드를 매개변수로 
+하는 생성자를 만드는 어노테이션
+
+@ToString : toString()을 사용한 것과 동일한 어노테이션
+
+@Sl4j : 로깅 기능을 사용하기 위한 어노테이션 "log,info()"

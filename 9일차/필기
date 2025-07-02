@@ -1,0 +1,194 @@
+# `페이지 이동`
+
+# `링크`
+
+미리 정해놓은 요청을 간편히 전송하는 기능으로 페이지 이동을 위해 사용
+
+```java
+<a href = "URL주소"> 링크를 걸 대상 </a>
+```
+
+# `리다이렉트`
+
+클라이언트가 보낸 요청을 마친 후 계속해서 처리할 다음 요청 주소를 재지시
+
+```java
+return "redirect:URL주소";
+```
+
+newboard 만듬
+
+입력페이지에서 다시 목록으로 돌아가는거 back
+
+입력페이지지에서 sumit을 누르면 만든 리다이렉트 쓰기
+
+게시글을 쓰면 상세페이지
+
+상세페이지에서 목록페이지로
+
+# `data.sql`
+
+```java
+ID.   title.  content
+//1. TESTDATA1 11111
+//2. TESTDATA1 22222
+//3. TESTDATA1 33333
+```
+
+```java
+INSERT INTO board(id,title,content) VALUES(1,'TESTDATA1','11111');
+INSERT INTO board(id,title,content) VALUES(2,'TESTDATA2','22222');
+INSERT INTO board(id,title,content) VALUES(3,'TESTDATA3','33333');
+```
+
+# [`application.properties`](http://application.properties) + 추가
+
+```java
+spring.datasource.defer-initialization=true
+```
+
+# `BoardControoler + edit`
+
+```java
+
+```
+
+# `edit.mustache`
+
+```java
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> 게시물 수정 </title>
+</head>
+<body>
+{{>layout/header}}
+{{#boards}}
+
+<form class = "container" action ="/boards/update" method = "post">
+    <input name = "id" type ="hidden" value ="{{id}}">
+    <div class="mb-3">
+        <label class="form-label"> 제목 </label>
+        <input type="text" class="form-control" name = "title" value="{{title}}">
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label"> 내용 </label>
+        <textarea class = "form-control" rows ="3" name = "content">{{content}}</textarea>
+        <div id="emailHelp" class="form-text"> 성적인 내용을 담은 욕설이나 비하, 음란한 표현을 작성하지 마세요 </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="boards/{{id}}">Back</a>
+
+</form>
+{{/boards}}
+
+{{>layout/footer}}
+</body>
+</html>
+```
+
+# `+추가`
+
+```java
+<form class = "container" action ="/boards/update" method = "post">
+    <input name = "id" type ="hidden" value ="{{id}}">
+```
+
+# `<설명>`
+
+url 선언 → /boards/update
+
+<input> 태그 선언 
+
+id가 몇번인 보드를 수정하는지 알려주는 역할
+
+# `dto → BoardForm`
+
+```java
+package com.example.project.dto;
+
+import com.example.project.entity.Board;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
+
+@ToString
+@AllArgsConstructor
+public class BoardForm {
+    private Long id;
+    private String title;
+    private String content;
+
+    public Board toEntity() {
+        return new Board(id, title, content);
+    }
+}
+
+```
+
+# `+추가`
+
+```java
+private Long id;
+
+public Board toEntity() {
+        return new Board(id, title, content);
+    }
+```
+
+# `설명`
+
+private Long id 추가
+
+null → id 로 바꾸고
+
+update.mustache
+
+# `BoardControoler + update`
+
+```java
+@PostMapping("/boards/update")
+    public String update(BoardForm boardform){
+        log.info(boardform.toString());
+
+        //1. dto를 엔티티로 반환하기
+        Board boardEntiy = boardform.toEntity();
+        //로그 찍기
+        log.info(boardform.toString());
+
+        //2, 엔티티를 DB에 저장하기.
+        Board saved = boardRepository.findById(boardEntiy.getId()).orElse(null);
+
+        if(saved != null){
+            boardRepository.save(boardEntiy);
+        }
+
+        //로그 찍기
+        log.info(boardform.toString());
+
+        //상세페이지로 리다이렉트 하기
+        return "redirect:/boards/" + saved.getId();
+    }
+```
+
+# `BoardControoler + delete`
+
+ 
+
+```java
+@GetMapping("/boards/{id}/delete")
+    public String delete(@PathVariable Long id, RedirectAttributes msg) {
+        log.info("삭제 요청이 들어왔습니다.");
+
+        Board deleteData = boardRepository.findById(id).orElse(null);
+        log.info(toString());
+
+        if (deleteData != null) {
+            boardRepository.delete(deleteData);
+            msg.addFlashAttribute("message","삭제되었습니다.");
+        }
+
+        return "redirect:/boards";
+    }
+```
