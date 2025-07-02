@@ -1,0 +1,65 @@
+ `DB연결`
+ 
+ ORACLE Database 21c
+
+SQL Developer 24.3.1
+
+---
+
+ **ORACLE Database 21c Express Dfition**
+
+→ 압축풀기
+
+→ setup 클릭
+
+→ 비번 1234
+
+-> 다운로드
+
+========================================================
+`-cmd-`
+
+>sqlplus system/1234@xe
+
+SQL> ALTER SESSION SET “_ORACLE_SCRIPT” = TRUE;
+
+SQL> CREATE USER SPRINGBOOTUSER IDENTIFIED BY boot2025;
+
+SQL> GRANT CONNECT, RESOURCE, DBA TO SPRINGBOOTUSER;
+
+COMMIT;
+
+exit;
+
+sqlplus
+
+사용자입력 : SPRINGBOOTUSER
+
+비밀번호 입력 : boot2025
+
+그러면 된거임.. 완성
+
+=========================================================
+
+`로깅(logging)`
+
+**로깅이란 시스템이 동작할 때 당시의 상태와 작동 정보를 기록하는 것을 의미.**
+
+Spring Log Level   
+
+TRACE(낮음) → FATAL(위험도 높음)
+
+FATAL : 아주 심각한 에러 발생시
+
+ERROR : 일반적인 에러 발생시
+
+WARN : 실행에는 문제가 없지만 향후에 에러의 원인이 될 수 있는 경우를 대비하여 경고 발생
+
+INFO : 상태 변경으로 인한 정보성 메세지
+
+DEBUG : 디버그용 메세지
+
+TRACE : 디버그보다 더 상세한 정보
+
+
+
