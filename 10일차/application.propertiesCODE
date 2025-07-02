@@ -2,7 +2,7 @@ logging.level.org.hibernate.SQL = DEBUG //추가
 spring.jap.properties.hibernate.format_sql = true //추가
 
 logging,level.org.hibernate.type.descriptor.sql.BasicBinder = TRACE 
-# 커리에 -> ? 나옴  ? -> 값을 확인 할 수 있게 하는 것.
+# QUREY 에 -> ? 나옴  ? -> 값을 확인 할 수 있게 하는 것.
 spring.datasource.generate-unique-name = false
 spring.datasource.url = jdbc:h2:mem:testdb
 
