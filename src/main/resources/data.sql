@@ -1,3 +1,3 @@
-INSERT INTO board(id, title,content) VALUES(1,'TESTDATA1','11111');
-INSERT INTO board(id, title,content) VALUES(2,'TESTDATA2','22222');
-INSERT INTO board(id, title,content) VALUES(3,'TESTDATA3','33333');
+INSERT INTO board(title,content) VALUES('TESTDATA1','11111');
+INSERT INTO board(title,content) VALUES('TESTDATA2','22222');
+INSERT INTO board(title,content) VALUES('TESTDATA3','33333');
