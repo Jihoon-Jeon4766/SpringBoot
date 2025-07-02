@@ -1,0 +1,2 @@
+JDBC URL : jdbc:h2:mem:testdb -> 복사해서 넣기  
+connect 하기.
