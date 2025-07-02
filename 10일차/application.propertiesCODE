@@ -1,13 +1,20 @@
 logging.level.org.hibernate.SQL = DEBUG //추가
+# logging 설정 (QUERY 출력 되게 설정)
+
 spring.jap.properties.hibernate.format_sql = true //추가
+# 출력  QUERY 줄 바꿈 
 
 logging,level.org.hibernate.type.descriptor.sql.BasicBinder = TRACE 
-# QUERY 에 -> ? 나옴  ? -> 값을 확인 할 수 있게 하는 것.
-spring.datasource.generate-unique-name = false
-spring.datasource.url = jdbc:h2:mem:testdb
+# QUERY 에 -> ?(매개변수) 나옴  ?(매개변수) -> 값을 확인 할 수 있게 하는 것.
+
+spring.datasource.generate-unique-name = false  
+# Spring Boot가 매번 유니크한 이름의 DB를 자동으로 만들지 않게 “꺼버리는” 설정
+spring.datasource.url = jdbc:h2:mem:testdb 
+# 고정 URL 설정
 
 
 
+# 이것들은 SQL 하기 위한 작업들..
 spring.datasource.url = jdbc:oracle:thin:@localhost:1521:xe  //추가
 spring.datasource.username = SPRINGBOOTUSER  //추가
 spring.datasource.password = boot2025        //추가
