@@ -1,22 +1,104 @@
 Spring Boot
 -------------
-Framework 와 Library 차이
+# `Framework`
 
-의존성 4가지 추가
+### 프레임워크
 
-Project : 전체 프로젝트가 저장되는 최상위 디렉터리
+## Frame + work
 
-Java : 애플리케이션의 핵심 기능을 작성하는 JAVA 파일들의 위치
+“틀” + “일하다”의 합성어
 
-Resources : 외부 파일 (설정파일, 정적파일, 템플릿)을 담음
+합쳐서 “틀을 가지고 일하다”
 
-Project Application : Spring Boot 애플리케이션을 시작하는 진입점 -tomcat
+프라 모델 키트 부품 = “Framework”
 
-Build.gradle : 프로젝트 빌드 방식 및 의존성 관리하는 설정 파일
+다양한 건담 = “page”
 
-@Component 는 Spring Framework에서 해당 클래스를 스프링이 자동으로 객체로 생성(빈 등록) 하게 해주는 어노테이션입니다.
+# `Framework`
 
-@Autowired 는 Spring Framework에서 의존성 주입(Dependency Injection) 을 자동으로 해주는 어노테이션입니다.
+일정한 구조나 규칙에 따라 코드를 작성할 수 있도록 도와주는 재사용 가능한 소프트웨어 툴로 개발 효율성을 높이고, 일 관련된 구조를 유지하게 해줌
+
+# `Library`
+
+프로그램을개발하기 위해 사용되는 도구 모음
+
+# `Framework 와 Library 차이점`
+
+---
+
+Framework           차이점
+
+규악, 틀 제공           자유도
+
+---
+
+Library                 공통점
+
+도구 모음               프로그램을 쉽게 만들기 위한 것
+
+---
+
+# `Spring Boot`
+
+복잡한 설정이 빠르게 웹 어플리케이션을 개발할 수 있도록 도와주는 Spring 프레임워크 기반의 개발 도구
+
+# `환경구성`
+
+## JDK(Java Development Kit)
+
+JDK는 자바 개발 키트의 약자로 개발자들이 Java 기반 소프트웨어를 개발하기 위한 도구 모음
+
+## IDE(Integrated Development Environment)
+
+코드를 작성하고, 저장하고 컴파일 및 디버깅을 도와주는 통합 개발 환경으로 자바 개발자의 필수 프로그램
+
+# `IDE download`
+
+https://www.jetbrains.com/idea/download/?section=mac
+
+# `Spring Project 만들기`
+
+https://start.spring.io/
+
+# `의존성 4가지 추가`
+
+**Spring Web**
+
+**Mustache -html 템플릿 엔진** 
+
+**Spring Data JPA - DB를 저장하거나 데이터 조회를 자동화**
+
+**H2 Database - 가벼운 인메모리 데이터**
+
+# `Project`
+
+**Project : 전체 프로젝트가 저장되는 최상위 디렉터리**
+
+**Java : 애플리케이션의 핵심 기능을 작성하는 JAVA 파일들의 위치**
+
+**Resources : 외부 파일 (설정파일, 정적파일, 템플릿)을 담음**
+
+**Project Application : Spring Boot 애플리케이션을 시작하는 진입점 -tomcat**
+
+**Build.gradle : 프로젝트 빌드 방식 및 의존성 관리하는 설정 파일**
+
+# `Spring Framework`
+
+스프링 프레임워크
+
+자바 기반의 대표적인 프레임워크로, 객체 생성과 관리, 트랜잭션, AOP, MVC 웹 구조 등을 지원해, 엔터프라이즈급 웹 애플리케이션을 구성할 수 있게 해주는 강력한 기능을 제공.
+
+# `Spring boot`
+
+스프링 부트
+
+스프링 프레임워크의 복잡한 설정을 최소화해주는 도구로, 자동설정, 내장 톰캣, 간편한 실행을 지원해서 빠르게 웹 프로젝트를 시작하고 배포할 수 있음.
+
+# `part1. DI`
+
+dependence - 의존성
+
+**한 객체가 다른 객체의 기능이다 데이터를 사용할 때 생기는 관계**
 
 # `Part2. AOP`
 
@@ -122,9 +204,19 @@ import 를 안했기에 오류 남…
 
 → 4. 변수 만들기(username) 5. Controller → model 사용, model.addAttribute 모델에다가 변수 설정 → 6. 페이지 실행
 
+# `페이지 이동`
+
+# `링크`
+
+미리 정해놓은 요청을 간편히 전송하는 기능으로 페이지 이동을 위해 사용
+
 # `로깅(logging)`
 
 **로깅이란 시스템이 동작할 때 당시의 상태와 작동 정보를 기록하는 것을 의미.**
+
+# `리다이렉트`
+
+클라이언트가 보낸 요청을 마친 후 계속해서 처리할 다음 요청 주소를 재지시
 
 Spring Log Level   
 
