@@ -59,8 +59,6 @@ JSON = JavaScript Object Notation -텍스트 기반의 데이터 형식..
 1. 사용자 요청 → 2. 요청분석(Controller) → 3. 모델 호출 → 4. 데이터반환
 → 5. 데이터 처리 및 뷰 호출 → 6. 웹 브라우저 응답 → 7. 페이지확인
 
-![image.png](attachment:d6362df3-47a1-4e51-b609-ff8fb5ddc706:image.png)
-
 # `뷰 템플릿 (Mustache)`
 
 **웹 페이지를 하나의 툴로 만들고 여기에 변수를 삽입해 서로 다른 페이지로 보여 주는 기술.**
@@ -70,16 +68,6 @@ JSON = JavaScript Object Notation -텍스트 기반의 데이터 형식..
 **프레젠테이션 로직을 담당 (ex. `if`, `for` 등을 통해 데이터 반복/조건 처리)**
 
 ### resources → templates → new → file
-
-![스크린샷 2025-06-17 20.45.47.png](attachment:3e16bc84-a501-444b-9fa8-a84e898ba97d:스크린샷_2025-06-17_20.45.47.png)
-
-### Install 클릭
-
-![스크린샷 2025-06-17 20.48.51.png](attachment:0902b9ca-9be4-462f-a858-81d426975ade:6030aecc-419d-416d-86d5-9c308167ae1f.png)
-
-![스크린샷 2025-06-17 20.50.01.png](attachment:333d0c13-8ef6-460e-92fc-9960f5614b4b:스크린샷_2025-06-17_20.50.01.png)
-
-### **없다면 → 이거 설치**
 
 ### **-뷰(View) (file.mustache)**
 
@@ -127,7 +115,6 @@ import 를 안했기에 오류 남…
 우리가 사용하는 모델은 org.spring.framework 에 위치함
 
 이거를 import 해야함.
-
 
 지금까지 구현 정리
 
