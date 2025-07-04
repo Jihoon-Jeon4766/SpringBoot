@@ -24,4 +24,12 @@ public class Board {
     private String content;
 
 
+    public void patch(Board board) {
+        if(board.title != null){
+            this.title = board.title;
+        }
+        if(board.content != null){
+            this.content = board.content;
+        }
+    }
 }
